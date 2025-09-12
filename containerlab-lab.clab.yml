@@ -1,0 +1,5 @@
+name: containerlab-lab
+topology: {}
+mgmt:
+  network: containerlab-lab-mgmt
+  ipv4_subnet: 172.80.80.0/24
