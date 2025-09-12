@@ -1,0 +1,67 @@
+{
+  "name": "Containerlab Lab - Lab",
+  "image": "ghcr.io/srl-labs/containerlab/devcontainer-dind-slim:0.68.0",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb",
+    "storage": "32gb"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.vscode-yaml",
+        "ms-vscode.vscode-json",
+        "ms-python.python",
+        "ms-python.pylint",
+        "ms-python.flake8",
+        "eamodio.gitlens",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "ms-vscode.vscode-terminal",
+        "ms-azuretools.vscode-docker",
+        "christian-kohler.path-intellisense"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.defaultInterpreterPath": "/usr/bin/python3",
+        "yaml.schemas": {
+          "https://raw.githubusercontent.com/srl-labs/containerlab/main/schemas/clab.schema.json": "*.clab.yml"
+        },
+        "files.associations": {
+          "*.clab.yml": "yaml",
+          "*.clab.yaml": "yaml"
+        },
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+      }
+    }
+  },
+  "forwardPorts": [
+    5000,
+    8000,
+    8080,
+    8443
+  ],
+  "portsAttributes": {
+    "5000": {
+      "label": "Lab Web Interface",
+      "onAutoForward": "openPreview"
+    },
+    "8000": {
+      "label": "Lab API",
+      "onAutoForward": "ignore"
+    },
+    "8080": {
+      "label": "Alternative Web Interface",
+      "onAutoForward": "ignore"
+    },
+    "8443": {
+      "label": "HTTPS Web Interface",
+      "onAutoForward": "ignore"
+    }
+  },
+  "remoteEnv": {
+    "CONTAINERLAB_VERSION": "0.68.0"
+  }
+}
