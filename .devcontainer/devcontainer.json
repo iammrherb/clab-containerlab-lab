@@ -13,76 +13,18 @@
         "redhat.vscode-yaml",
         "ms-vscode.vscode-json",
         "ms-python.python",
-        "ms-python.pylint",
-        "ms-python.flake8",
-        "eamodio.gitlens",
-        "GitHub.copilot",
-        "GitHub.copilot-chat",
-        "ms-vscode.vscode-terminal",
         "ms-azuretools.vscode-docker",
-        "ms-vscode-remote.remote-containers",
-        "christian-kohler.path-intellisense",
-        "vscode-icons-team.vscode-icons",
-        "hediet.vscode-drawio"
+        "eamodio.gitlens"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash",
-        "terminal.integrated.shell.linux": "/bin/bash",
-        "python.defaultInterpreterPath": "/usr/bin/python3",
         "containerlab.defaultSshUser": "admin",
-        "containerlab.sudo": false,
-        "containerlab.refreshInterval": 10000,
-        "containerlab.execCommandMapping": {
-          "srl": "/bin/bash",
-          "ceos": "/bin/bash",
-          "crpd": "/bin/bash",
-          "sonic": "/bin/bash",
-          "cvx": "/bin/bash",
-          "vr-sros": "/bin/bash",
-          "vr-vmx": "/bin/bash",
-          "vr-xrv9k": "/bin/bash",
-          "vr-veos": "/bin/bash",
-          "linux": "/bin/bash"
-        },
         "yaml.schemas": {
           "https://raw.githubusercontent.com/srl-labs/containerlab/main/schemas/clab.schema.json": [
             "*.clab.yml",
             "*.clab.yaml"
           ]
-        },
-        "files.associations": {
-          "*.clab.yml": "yaml",
-          "*.clab.yaml": "yaml",
-          "*.topoviewer.yml": "yaml"
-        },
-        "yaml.format.enable": true,
-        "yaml.validate": true,
-        "yaml.hover": true,
-        "yaml.completion": true,
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "redhat.vscode-yaml",
-        "editor.minimap.enabled": true,
-        "editor.wordWrap": "on",
-        "editor.rulers": [
-          80,
-          120
-        ],
-        "files.exclude": {
-          "**/clab-*": true,
-          "**/.git": true,
-          "**/node_modules": true,
-          "**/__pycache__": true
-        },
-        "explorer.fileNesting.enabled": true,
-        "explorer.fileNesting.patterns": {
-          "*.clab.yml": "*.clab.yaml,graph.html,topology-data.json"
-        },
-        "workbench.iconTheme": "vscode-icons",
-        "workbench.tree.indent": 15,
-        "docker.showStartPage": false,
-        "docker.dockerPath": "/usr/bin/docker",
-        "extensions.autoUpdate": false,
-        "extensions.autoCheckUpdates": false
+        }
       }
     }
   },
@@ -90,43 +32,9 @@
     5000,
     8000,
     8080,
-    8443,
-    9443,
-    57400
+    8443
   ],
-  "portsAttributes": {
-    "5000": {
-      "label": "Lab Web Interface",
-      "onAutoForward": "openPreview"
-    },
-    "8000": {
-      "label": "Lab API",
-      "onAutoForward": "ignore"
-    },
-    "8080": {
-      "label": "Alternative Web Interface",
-      "onAutoForward": "ignore"
-    },
-    "8443": {
-      "label": "HTTPS Web Interface",
-      "onAutoForward": "ignore"
-    },
-    "9443": {
-      "label": "Nokia SR Linux gNMI",
-      "onAutoForward": "ignore"
-    },
-    "57400": {
-      "label": "Nokia SR Linux gNMI/gNOI",
-      "onAutoForward": "ignore"
-    }
-  },
-  "remoteEnv": {
-    "CONTAINERLAB_VERSION": "0.68.0",
-    "CLAB_LABDIR_BASE": "/workspaces",
-    "CLAB_RUNTIME": "docker"
-  },
-  "postCreateCommand": "echo 'Containerlab VS Code extension ready! \ud83d\ude80' && containerlab version",
-  "initializeCommand": "docker --version && echo 'Docker available for containerlab'",
+  "postCreateCommand": "echo 'Containerlab ready!' && containerlab version",
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ]
